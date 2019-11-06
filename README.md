@@ -1,5 +1,10 @@
 # useful_stuff
 
+## NVIDIA with 16.04
+### login loop or black screen
+
+DO NOT EDIT grub file with nomodeset only 'Ubuntu' in the start menu
+
 ## GCP 
 ### Mount bucket on vm
 ```
