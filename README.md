@@ -19,7 +19,7 @@ gsutil -m cp -r dir-you-want-copy-from gs://my-test-apple-data/deeplab_results/
 ### Copy local folder to vm machine
 
 ```
-gcloud compute scp --recurse [LOCAL_FILE_PATH] [INSTANCE_NAME]:~ --zone [asia....]
+gcloud compute scp --recurse [LOCAL_FILE_PATH] [INSTANCE_NAME]:/home/user/... --zone [asia....]
 ```
 
 ### Copy bucket folder to local machine
