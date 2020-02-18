@@ -6,9 +6,14 @@
 
 https://zenodo.org/record/3361736
 
+Labelling tool: http://structuralsegm.sourceforge.net/
+
 2. Apple/Pear/Peach flower (pixel)
 
 https://data.nal.usda.gov/dataset/data-multi-species-fruit-flower-detection-using-refined-semantic-segmentation-network
+
+Labelling tool: https://bitbucket.org/phil_dias/freelabel-wacv/src/master/
+
 
 ## NVIDIA with 16.04
 ### login loop or black screen
