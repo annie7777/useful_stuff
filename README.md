@@ -54,3 +54,7 @@ git remote add origin <remote repository URL>
 git remote -v
 git push origin master
 ```
+## CUDNN_STATUS_NOT_INITIALIZED
+
+found this is because the pretrained model giving bad performance so currently the solution is training from scratch
+
