@@ -2,18 +2,27 @@
 
 ## Agricultural labelling Dataset:
 
-1. Grapevine(instance)
+### 1. Grapevine(instance)
 
-https://zenodo.org/record/3361736
+Paper: https://www.sciencedirect.com/science/article/pii/S0168169919315765
+
+Link: https://zenodo.org/record/3361736
 
 Labelling tool: http://structuralsegm.sourceforge.net/
 
-2. Apple/Pear/Peach flower (pixel)
+### 2. Apple/Pear/Peach flower (pixel)
 
-https://data.nal.usda.gov/dataset/data-multi-species-fruit-flower-detection-using-refined-semantic-segmentation-network
+Paper: https://ieeexplore.ieee.org/document/8392727
+
+Link: https://data.nal.usda.gov/dataset/data-multi-species-fruit-flower-detection-using-refined-semantic-segmentation-network
 
 Labelling tool: https://bitbucket.org/phil_dias/freelabel-wacv/src/master/
 
+### 3. Apple (BBox), available in different formats(RGB, Depth and range corrected intensity)
+
+Paper: https://www.sciencedirect.com/science/article/pii/S0168169919301413
+
+Link: http://www.grap.udl.cat/en/publications/datasets.html
 
 ## NVIDIA with 16.04
 ### login loop or black screen
