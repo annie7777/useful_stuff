@@ -23,6 +23,9 @@ Labelling tool: https://bitbucket.org/phil_dias/freelabel-wacv/src/master/
 Paper: https://www.sciencedirect.com/science/article/pii/S0168169919301413
 
 Link: http://www.grap.udl.cat/en/publications/datasets.html
+### 4. Fruit 360 (Apple Varieties Classfication)
+
+Link: https://www.kaggle.com/moltean/fruits/kernels
 
 ## NVIDIA with 16.04
 ### login loop or black screen
