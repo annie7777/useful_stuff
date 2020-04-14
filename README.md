@@ -27,6 +27,10 @@ Link: http://www.grap.udl.cat/en/publications/datasets.html
 
 Link: https://www.kaggle.com/moltean/fruits/kernels
 
+### 5. Apple Defect detection(244 images of defected apples)
+
+Link: https://github.com/raheelsiddiqi2013/apple-defect-detection
+
 ## NVIDIA with 16.04
 ### login loop or black screen
 
