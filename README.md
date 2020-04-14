@@ -36,8 +36,11 @@ DO NOT EDIT grub file with nomodeset only 'Ubuntu' in the start menu
 ### keep processes running after ending ssh session 
 
 type ```screen``` in ssh
+
 Ctrl+A
+
 type ```python FCN......```
+
 Ctrl+D
 
 Ref: https://medium.com/@arnab.k/how-to-keep-processes-running-after-ending-ssh-session-c836010b26a3
