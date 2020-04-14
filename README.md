@@ -32,7 +32,16 @@ Link: https://www.kaggle.com/moltean/fruits/kernels
 
 DO NOT EDIT grub file with nomodeset only 'Ubuntu' in the start menu
 
-## GCP 
+## GCP
+### keep processes running after ending ssh session 
+
+type ```screen``` in ssh
+Ctrl+A
+type ```python FCN......```
+Ctrl+D
+
+Ref: https://medium.com/@arnab.k/how-to-keep-processes-running-after-ending-ssh-session-c836010b26a3
+
 ### Mount bucket on vm
 ```
 gcsfuse --background --threads apple-data[gcp folder] bucket/[folder on instance]
