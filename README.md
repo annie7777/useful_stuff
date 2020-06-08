@@ -91,3 +91,7 @@ found this is because the pretrained model giving bad performance so currently t
 cmake -DCMAKE_BUILD_TYPE=RELEASE  -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DENABLE_PRECOMPILED_HEADERS=OFF -DBUILD_TIFF=ON -DBUILD_LIBPROTOBUF_FROM_SOURCES=ON -DOPENCV_GENERATE_PKGCONFIG=YES ..
 
 if using conda then remove condapath
+
+## Best cnn visualization video
+
+https://www.youtube.com/watch?v=RNnKtNrsrmg&feature=youtu.be
