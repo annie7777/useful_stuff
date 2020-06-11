@@ -95,3 +95,6 @@ if using conda then remove condapath
 ## Best cnn visualization video
 
 https://www.youtube.com/watch?v=RNnKtNrsrmg&feature=youtu.be
+
+## create video from images in a folder
+cat *.jpg | ffmpeg -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
