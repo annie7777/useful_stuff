@@ -100,7 +100,8 @@ https://www.youtube.com/watch?v=RNnKtNrsrmg&feature=youtu.be
 
 cat *.jpg | ffmpeg -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
 
-## Switch project gcloud 
+## Switch project and zone gcloud 
 
 gcloud config set project apple-sensing
+gcloud config set compute/region us-east4
 
