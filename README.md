@@ -105,3 +105,8 @@ cat *.jpg | ffmpeg -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
 gcloud config set project apple-sensing
 gcloud config set compute/region us-east4
 
+## Refresh in linux
+
+sudo apt install gnome-shell
+gnome-shell --replace & disown
+
