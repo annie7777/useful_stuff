@@ -55,7 +55,7 @@ Ref: https://medium.com/@arnab.k/how-to-keep-processes-running-after-ending-ssh-
 
 ### Mount bucket on vm
 ```
-gcsfuse --background --threads apple-data[bucket] my-test-apple-data/[folder on instance]
+gcsfuse --background --threads my-test-apple-data[bucket] bucket/[folder on instance]
 ```
 
 ### Copy vm folders to bucket
