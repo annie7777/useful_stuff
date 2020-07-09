@@ -108,7 +108,10 @@ cat *.jpg | ffmpeg -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
 ## Switch project and zone gcloud 
 
 gcloud config set project apple-sensing
+
 gcloud config set compute/region us-east4
+
+Ref: https://stackoverflow.com/questions/45125143/how-to-change-region-zone-in-google-cloud
 
 ## Refresh in linux
 
