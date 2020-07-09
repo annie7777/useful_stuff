@@ -31,6 +31,10 @@ Link: https://www.kaggle.com/moltean/fruits/kernels
 
 Link: https://github.com/raheelsiddiqi2013/apple-defect-detection
 
+### 6. Synthetic fruit dataset
+
+Link: https://public.roboflow.ai/object-detection/synthetic-fruit/1
+
 ## NVIDIA with 16.04
 ### login loop or black screen
 
