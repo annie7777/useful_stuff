@@ -118,3 +118,6 @@ Ref: https://stackoverflow.com/questions/45125143/how-to-change-region-zone-in-g
 sudo apt install gnome-shell
 gnome-shell --replace & disown
 
+## YoloV5 RuntimeError: No such operator torchvision:nms
+https://github.com/ultralytics/yolov5/issues/352#issuecomment-661842317
+
