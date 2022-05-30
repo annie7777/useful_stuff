@@ -121,3 +121,5 @@ gnome-shell --replace & disown
 ## YoloV5 RuntimeError: No such operator torchvision:nms
 https://github.com/ultralytics/yolov5/issues/352#issuecomment-661842317
 
+## aws
+ssh -L 8080:localhost:8080 -i ~/.ssh/admin_cameron.pem ubuntu@ipadress
