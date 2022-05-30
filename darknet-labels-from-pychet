@@ -1,0 +1,82 @@
+#!/bin/bash
+export readonly name=$( basename $0 )
+source $( type -p comma-application-util ) || (error "comma not installed")
+
+function log { echo "$name: $@" >&2; }
+function log_verbose { [[ -z $options_verbose ]] || log $@; }
+function error { log "error: $@" ; exit 1; }
+function check_exists { [[ -f $1 ]] || error "missing: $1" ; }
+function check_folder { [[ -s $1 ]] || error "missing or empty: $1" ; }
+
+
+function option-description
+{
+   cat <<EOF
+--help,-h; show this help
+--verbose,-v; verbose output
+--dir=<pychet-directory>; folder containing pychetlabeller output with images and labels subfolders.
+EOF
+}
+
+function usage
+{
+    cat <<eof
+
+$name converts pychetlabeller style dataset to darknet style.
+
+usage: $name [options]
+
+options:
+$( option-description | sort | sed 's/^/    /g' )
+
+todo: to see further details use: 
+$name -h -v
+
+eof
+    exit 1
+}
+
+
+
+if (( $( comma_options_has --help $@ ) || $( comma_options_has -h $@ ) )) ; then usage ; fi
+options=$( option-description | comma-options-to-name-value "$@" ) || error "invalid command line options"
+comma_path_value_to_var --prefix="options" <<< "$options"
+
+(( $( comma_options_has --verbose "$@" ) || $( comma_options_has -v "$@" ) )) && export readonly verbose=true
+(( $( comma_options_has --view "$@" ) )) && export readonly view=true
+
+check_folder "$options_dir/labels"
+check_folder "$options_dir/images"
+
+mkdir -p images
+mkdir -p labels
+
+for img_fn in $(find $options_dir/images -maxdepth 1 -name "*png"); do
+	img_fn_no_ext=$(echo $img_fn | rev | cut -d/ -f1 | cut -d. -f2- | rev)
+	label_fn=$options_dir/labels/$img_fn_no_ext.csv
+	log_verbose processing $img_fn_no_ext ...	
+	width=$(file $img_fn | cut -d, -f2 | cut -d x -f1 | tr -d ' ')
+	height=$(file $img_fn | cut -d, -f2 | cut -d x -f2 | tr -d ' ')
+	cat $label_fn \
+        | sed '/#/d' \
+        | csv-shuffle --fields=i,x,y,w,h,c --output-fields=c,x,y,w,h \
+        | csv-eval --fields=c,x,y,w,h --format=ui,4d "c=c-1;x=(2*x+w)/2/$width;y=(2*y+h)/2/$height;w=w/$width;h=h/$height" \
+		| tr "," " " \
+        > labels/$img_fn_no_ext.txt
+	cp $img_fn images/
+done
+
+# hack: for any names of the form <timestamp>.<id>.png, change filename to <timestamp+id>.png to keep timestamps unique
+# note: interprets id in microseconds, assumes the sum does not then clash with another timestamp
+find ./images/ -maxdepth 1 -name "*png" | egrep --regexp "[0-9]{8}T[0-9]{6}\.[0-9]{6}\.[0-9]+" \
+    | while read filename ; do
+        basefn=$(basename $filename)
+        IFS=. read ta tb i extension <<< $basefn
+        unique_time=$(echo $ta.$tb | csv-eval -f t "t=t+$i")
+        log_verbose "renaming $ta.$tb.$i to $unique_time"
+        check_exists "images/$basefn"
+        mv images/$ta.$tb.$i.png images/$unique_time.png
+        check_exists "labels/$ta.$tb.$i.txt"
+        mv labels/$ta.$tb.$i.txt labels/$unique_time.txt
+      done
+
